@@ -1,8 +1,8 @@
 {
-  "name": "my-pipeline",
+  "name": "my-web",
   "version": "0.1.0",
   "bin": {
-    "my-pipeline": "bin/my-pipeline.js"
+    "my-web": "bin/my-web.js"
   },
   "scripts": {
     "build": "tsc",

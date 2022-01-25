@@ -9,7 +9,9 @@ export class MyWebService extends Construct {
     super(scope, id);
 
     // S3 Bucket for hosting the service
-    const bucket = new s3.Bucket(this, "WebStore");
+    const bucket = new s3.Bucket(this, "WebStore",{
+      removalPolicy:cdk.RemovalPolicy.DESTROY
+    });
 
     // Lambda function for business logic
     const handler = new lambda.Function(this, "WebHandler", {
