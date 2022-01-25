@@ -15,16 +15,5 @@ export class MyPipelineStack extends cdk.Stack {
         commands: ['npm ci', 'npm run build', 'npx cdk synth']
       })
     });
-
-    pipeline.addStage(new MyPipelineAppStage(this, "test", {
-      env: { account: "307158967668", region: "us-west-2" }
-    }));
-
-    const testingStage = pipeline.addStage(new MyPipelineAppStage(this, 'testing', {
-      env: { account: '307158967668', region: 'us-west-2' }
-    })); 
-    
-    testingStage.addPost(new ManualApprovalStep('approval'));
-
   }
 }
